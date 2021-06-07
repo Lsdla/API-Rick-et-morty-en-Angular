@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="location-details" *ngIf="(location$ | async) as location">
+        <h1>{{location.name}}</h1>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Dimension</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{location.id}}</th>
+                    <td>{{location.name}}</td>
+                    <td>{{location.type}}</td>
+                    <td>{{location.dimension}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="residents" *ngIf="(location.residents | async) as residents">
+            <h3>Residents ({{location.residentsCount}})</h3>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let character of residents"> <!-- bootstrap fonctionne par 12 colonnes par page donc a chaque fois on doit trouver ce 12 en petit écran 1 colone de 12, moyen ecran 2 colone de 6, puis 3 colone de 4 puis 4 colone de 3-->
+                    <div class="card mb-2"> <!-- mb-2 ==> margin-bottom de 20px -->
+                        <img [src]="character.image" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a [routerLink]="['/characters', character.id]">{{character.name}}</a>
+                            </h5>
+                            <p class="card-text">Gender: {{character.gender}}</p>
+                            <p class="card-text">Specie: {{character.species}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

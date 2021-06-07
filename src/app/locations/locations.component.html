@@ -1,0 +1,46 @@
+<div class="container" *ngIf="(locations$ | async) as locations">
+    <h1>Locations</h1>
+    <hr>
+    <input id="typeahead-format" 
+       type="text" 
+       class="form-control" 
+       placeholder="Entrer un type"
+       [(ngModel)]="model" 
+       (keyup.enter)="onEnter()"
+       [ngbTypeahead]="search" 
+       [resultFormatter]="formatter" />
+    <div class="locations">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr class="location">
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Dimension</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let location of locations.results; let i = index">
+                    <th scope="row">{{location.id}}</th>
+                    <td>
+                        <a [routerLink]="['/locations', location.id]">{{location.name}}</a>
+                    </td>
+                    <td>{{location.type}}</td>
+                    <td>{{location.dimension}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item" [ngClass]="{'disabled': locations.info.prev == null}"> <!-- le ngClass permet de mettre des conditions-->
+                <a class="page-link"
+                (click)="changePageByUrl(locations.info.prev)">Précedent</a>
+              </li>
+              <li class="page-item" [ngClass]="{'disabled': locations.info.next == null}">
+                <a class="page-link"
+                (click)="changePageByUrl(locations.info.next)">Suivant</a>
+              </li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="container">
+    <!-- pour centrer et pour que ça prenne toute la largeur de l'ecran on met -fluid -->
+    <!-- START THE HOME -->
+
+    <div class="home">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide *ngFor="let image of images">
+                <div class="picsum-img-wrapper">
+                    <img [src]="image.src" alt="Random slide">
+                </div>
+                <div class="carousel-caption">
+                    <h3>{{image.title}}</h3>
+                    <p>This carousel hides navigation arrows and indicators.</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+
+
+        <hr class="home-divider">
+
+        <div class="row home">
+            <div class="col-md-7">
+                <h2 class="home-heading">
+                    Rick et Morty vont au métal avec la couverture de la <span class="text-muted">chanson
+                        thématique.</span>
+                </h2>
+                <p class="lead">Si vous êtes fan du célèbre dessin animé cérébral Rick et Morty, vous avez probablement
+                    entendu l’interprétation en métal de leur chanson thème la semaine dernière, à la fin de l’épisode
+                    intitulé «Morty’s Mind Blowers».</p>
+                <p class="lead">Ce n'était pas une reprise métallique aléatoire et générique, mais un morceau spécial
+                    produit par Jason Suecof (Carnifex, Death Angel, Cryptopsy, Job For A Cowboy, Trivium) et le batteur
+                    Alex Rudinger de Good Tiger et Conquering Dystopia (anciennement de The Faceless et Signal de
+                    menace).</p>
+                <p class="lead">La couverture a été diffusée pendant le générique à la fin de la série et sonnait à peu
+                    près exactement comme vous vous attendez à ce qu'une reprise en métal de la chanson thématique
+                    sonne, ainsi que de sérieuses compétences de la part des musiciens impliqués. Regardez la vidéo
+                    ci-dessous pour entendre le rendu par vous-même.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="home-image img-fluid img-thumbnail" src="assets/images/Rick-and-Morty-metal.jpeg"
+                    alt="Wubba lubba dub-dub">
+            </div>
+        </div>
+
+        <hr class="home-divider">
+
+        <div class="row">
+            <div class="col-md-7 order-md-2">
+                <h2 class="home-heading">
+                    <span class="text-muted">Wubba lubba dub-dub !</span>
+                    Après deux ans d’absence qui nous auront semblé une éternité, Rick l’inventeur et son petit-fils
+                    Morty reviennent pour des aventures.
+                </h2>
+                <p class="lead">En fin de saison 3, on avait laissé la famille Smith dans une situation des plus
+                    compliquées. Jerry et Beth étaient séparés, mais pas vraiment, Morty traumatisé par ses dernières
+                    excursions dans l’espace-temps, et Summer métamorphosée en Rambo hyper badass. Heureusement,
+                    grand-père Rick veille au grain, et c’est justement ce qu’on devrait découvrir dans la toute
+                    nouvelle saison de la série animée, annoncée officiellement par les deux personnages emblématiques
+                    de la chaîne Adult Swim.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="home-image img-h-auto img-thumbnail" src="assets/images/lubba-dub-dub.gif"
+                    alt="Rick and Morty metal theme song">
+            </div>
+        </div>
+
+        <hr class="home-divider">
+
+        <div class="row home">
+            <div class="col-md-7">
+                <h2 class="home-heading">Les créateurs de Rick et Morty promettent des pauses plus courtes entre les
+                    saisons</h2>
+                <p class="lead">À l'apogée de la télévision linéaire traditionnelle, tout fonctionnait comme une
+                    horloge. Il y avait des horaires serrés et cohérents que chaque émission respectait étroitement afin
+                    que le public puisse comprendre de manière fiable les flux et reflux de la saison télévisée, en
+                    particulier sur les réseaux de diffusion. Mais alors que le câble et le streaming sont devenus les
+                    puissances dominantes des petits écrans et que la frontière entre les supports de divertissement a
+                    continué de s'estomper, les horaires cohérents sont devenus une chose du passé. Game of Thrones de
+                    HBO, Atlanta de FX et Mindhunter de Netflix ne sont que trois des nombreux exemples qui ont pris
+                    leur temps pour revenir sur les ondes. Heureusement, le succès animé populaire de Adult Swim, Rick
+                    et Morty, s’efforcera de parvenir à un calendrier plus normalisé à l’avenir.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="home-image img-h-auto img-thumbnail" src="assets/images/shorter-sreaks.jpeg"
+                    alt="Rick and Morty Season 4 Release Date Episodes Trailer Spoilers">
+            </div>
+        </div>
+
+        <hr class="home-divider">
+    </div>
+
+    <!-- /END THE HOME -->
+</div>

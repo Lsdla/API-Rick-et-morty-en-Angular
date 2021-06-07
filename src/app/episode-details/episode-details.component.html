@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="episode-details" *ngIf="(episode$ | async) as episode">
+        <h1>{{episode.name}}</h1>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Saison</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{episode.id}}</th>
+                    <td>{{episode.air_date}}</td>
+                    <td>{{episode.episode}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="characters" *ngIf="(episode.characters | async) as characters">
+            <h3>Characters ({{episode.charactersCount}})</h3>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let character of characters"> <!-- bootstrap fonctionne par 12 colonnes par page donc a chaque fois on doit trouver ce 12 en petit écran 1 colone de 12, moyen ecran 2 colone de 6, puis 3 colone de 4 puis 4 colone de 3-->
+                    <div class="card mb-2"> <!-- mb-2 ==> margin-bottom de 20px -->
+                        <img [src]="character.image" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a [routerLink]="['/characters', character.id]">{{character.name}}</a>
+                            </h5>
+                            <p class="card-text">Gender: {{character.gender}}</p>
+                            <p class="card-text">Specie: {{character.species}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
