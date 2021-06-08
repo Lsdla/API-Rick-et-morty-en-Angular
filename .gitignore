@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+README.md
 # Only exists if Bazel was run
 /bazel-out
 
